@@ -37,6 +37,8 @@ mv ^(*.git|*.tmp) $DEST
 echo "Committing changes"
 git add .
 git commit -am "add $NEWDIR to monorepo"
+echo "Cleaning up"
+git remote rm $NEWDIR
 echo "Restore enviroment"
 unsetopt extendedglob
 unsetopt globdots
