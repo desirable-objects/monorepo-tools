@@ -21,56 +21,56 @@ If we were going to turn this into a [https://lernajs.io/](LernaJS) monorepo, we
 
  1. Move all existing files from the parent into a subirectory of the parent called `.tmp`. This is to avoid conflicts from incoming modules.
 
-Your monorepo should now look like this. Commit it!
+ Your monorepo should now look like this. Commit it!
 
-```
-$ tree -aL 1
-.
-├── .git
-└── .tmp
-```
+  ```
+  $ tree -aL 1
+  .
+  ├── .git
+  └── .tmp
+  ```
 
  2. For each repo you want to add, run the `./add_to_monorepo.sh` script:
 
-`./add_to_monorepo.sh <git-remote-url> <submodule-name>
+ `./add_to_monorepo.sh <git-remote-url> <submodule-name>`
 
-Your repo will now look like:
+ Your repo will now look like:
 
-
-```
-$ tree -aL 2
-.
-├── .git
-│    └── ...
-└── .tmp
-    ├── ...
-    └── your-new-submodule
-```
+  ```
+  $ tree -aL 2
+  .
+  ├── .git
+  │    └── ...
+  └── .tmp
+      ├── ...
+      └── your-new-submodule
+  ```
 
  3. Keep doing this until your project looks like a monorepo under `.tmp`
 
-```
-$ tree -aL 2
-.
-├── .git
-│    └── ...
-└── .tmp
-    ├── module-a
-    ├── module-b
-    ├── module-c
-    ├── module-d
-    └── module-e
-```
+  ```
+  $ tree -aL 2
+  .
+  ├── .git
+  │    └── ...
+  └── .tmp
+      ├── module-a
+      ├── module-b
+      ├── module-c
+      ├── module-d
+      └── module-e
+  ```
+
  4. You're done. Move all the files from `.tmp` into your root and commit it! Monorepo!
- 
- ```
-$ tree -aL 2
-.
-├── .git
-│    └── ...
-├── module-a
-├── module-b
-├── module-c
-├── module-d
-└── module-e
-```
+
+   ```
+  $ tree -aL 2
+  .
+  ├── .git
+  │    └── ...
+  ├── module-a
+  ├── module-b
+  ├── module-c
+  ├── module-d
+  └── module-e
+  ```
